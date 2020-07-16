@@ -17,8 +17,8 @@ public class GatewayServiceApplication {
 		RouteLocator StaticRoutes(RouteLocatorBuilder builder)
 	{
 		return builder.routes()
-				.route(r->r.path("/customers/**").uri("lb://customer-service").id("r1"))
-				.route(r->r.path("/products/**").uri("lb://inventory-service").id("r2"))
+				.route(r->r.path("/customers/**").uri("http://localhost:8181/").id("r1"))
+				.route(r->r.path("/products/**").uri("https://localhost:8282/").id("r2"))
 				.route(r->r.path("/biat/**").uri("lb://CUSTOMER-SERVICE").id("r3"))
 				/*.route(r->r.path("/publicscountries/**").filters(f->f.addRequestHeader("x-rapidapi-host","restcountries-v1.p.rapidapi.com")
 				.addRequestHeader("x-rapidapi-key","65638b4164msh211250a475b1409p17b586jsn8e1f2ffc3370")
